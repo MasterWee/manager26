@@ -61,7 +61,8 @@ export default {
           this.$axios.post("login",this.formData).then(res=>{
             if(res.data.meta.status === 400){
               // 错误
-              this.$message.error(res.data.meta.msg);
+              // 在vue-axios.js里用axios拦截器统一设置了
+              // this.$message.error(res.data.meta.msg);
             }else if(res.data.meta.status == 200){
               // 正确
             //   this.$message({
@@ -69,7 +70,8 @@ export default {
             //     type:"success"
             //   });
             // 另一种写法
-            this.$message.success(res.data.meta.msg);
+            // 在vue-axios.js里用axios拦截器统一设置了
+            // this.$message.success(res.data.meta.msg);
 
             // 保存token 用sessionStorage
             window.sessionStorage.setItem('token',res.data.data.token);
