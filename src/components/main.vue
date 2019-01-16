@@ -38,13 +38,17 @@
             </el-submenu>
           </el-menu>
         </el-aside>
-        <el-main>Main</el-main>
+        <el-main>
+          <!-- 渲染嵌套路由匹配的组件 -->
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
 </template>
 
 <script>
+
 export default {
   data(){
     return{
@@ -129,8 +133,9 @@ export default {
   .el-main {
     background-color: #e9eef3;
     color: #333;
-    text-align: center;
-    line-height: 160px;
+    padding-top: 0;
+    // text-align: center;
+    // line-height: 160px;
   }
 }
 .el-col-18 {
